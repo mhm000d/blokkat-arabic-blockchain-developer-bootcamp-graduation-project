@@ -1,6 +1,6 @@
 
 # About this project:
-- This's a decentralized voting platform where users donate ETH to support cases and receive CRED tokens in return.
+- This's a decentralized platform where users donate ETH to support cases and receive CRED tokens in return.
 - Built on Scroll Sepolia testnet.
 #### Directory Structure
 ```bash
@@ -34,9 +34,11 @@
 
 # Important links & Addresses
 - Testnet Contracts (Scroll Sepolia):
-- 1. Credits: 0x7a59fc37597f911bae74270ae21d1de0a3942e00 
-- 1. Donation: 0x2c787f2e028e07731593137d422acdc038b7ccc2
-- Frontend Hosting:
+  - Credits: 0x7a59fc37597f911bae74270ae21d1de0a3942e00 
+  - Donation: 0x2c787f2e028e07731593137d422acdc038b7ccc2
+
+
+- Frontend Hosting (vercel): [Click the link](https://donation-dapp-graduation-project.vercel.app/)
 
 # How to run tests
 - Navigate to the project root:
@@ -48,7 +50,7 @@
   - Token minting (Credits)
   - Voting logic (Donation)
 
-# how to run the program
+# How to run the program
 ###### Local Setup
 - Clone the repo and install dependencies:
 ```bash
