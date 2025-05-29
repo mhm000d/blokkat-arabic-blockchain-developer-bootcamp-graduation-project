@@ -1,66 +1,70 @@
-## Foundry
 
-**Foundry is a blazing fast, portable and modular toolkit for Ethereum application development written in Rust.**
-
-Foundry consists of:
-
--   **Forge**: Ethereum testing framework (like Truffle, Hardhat and DappTools).
--   **Cast**: Swiss army knife for interacting with EVM smart contracts, sending transactions and getting chain data.
--   **Anvil**: Local Ethereum node, akin to Ganache, Hardhat Network.
--   **Chisel**: Fast, utilitarian, and verbose solidity REPL.
-
-## Documentation
-
-https://book.getfoundry.sh/
-
-## Usage
-
-### Build
-
-```shell
-$ forge build
+# About this project
+- This's a decentralized voting platform where users donate ETH to support cases and receive CRED tokens in return.
+- Built on Scroll Sepolia testnet.
+#### Directory Structure
+```bash
+  ├── src/                 # Smart contracts
+  │   ├── Credits.sol      # ERC-20 token implementation (CRED)
+  │   └── Donation.sol     # Donation and voting contract
+  ├── scripts/             # Deployment scripts
+  ├── test/                # Foundry test cases
+  ├── donation-ui/         # Frontend 
+  |   | |__app/
+  |   | |  |__donate/      # donate page
+  |   | |  |__profile/     # profile page
+  |   | |_ page.tsx        # home page
+  |   |__lib/
+  |       |_contracts      # Contracts ABIs and Addresses
+  |   |__ etc
+  └── .env         # Environment variable configuration
 ```
 
-### Test
 
-```shell
-$ forge test
+# Design patterns
+- Inheritance (Ownable)
+- Ownable (Access Control)
+- Inter-Contract Execution (donation.sol use credit.sol to mint "CRED" tokens)
+- Take control of Credits minting by transfer the ownership (manually) to Donation.sol contract.
+
+# Security measures
+- Using Specific Compiler Pragma
+- Proper Use of Require
+- Checks-Effects-Interactions
+
+# Important links & Addresses
+- Testnet Contracts (Scroll Sepolia):
+- 1. Credits: 0x7a59fc37597f911bae74270ae21d1de0a3942e00 
+- 2. Donation: 0x2c787f2e028e07731593137d422acdc038b7ccc2
+- Frontend Hosting:
+
+# How to run tests
+- Navigate to the project root:
+```bash
+  cd ~/Donation-DApp
+  forge test
 ```
+- Tests cover:
+  - Token minting (Credits)
+  - Voting logic (Donation)
 
-### Format
-
-```shell
-$ forge fmt
+# how to run the program
+###### Local Setup
+- Clone the repo and install dependencies:
+```bash
+  git clone https://github.com/mhm000d/blokkat-arabic-blockchain-developer-bootcamp-graduation-project.git
+  cd ~/cd Donation-DApp
+  npm install
 ```
+- Edit .env to your own project_id:
+  - e.g. NEXT_PUBLIC_PROJECT_ID=your own project_id
 
-### Gas Snapshots
 
-```shell
-$ forge snapshot
+- To start donation-ui (frontend):
+```bash
+  cd donation-ui && npm run dev
 ```
+# Demo
+##### [Check out the full video](https://youtu.be/aK5OMq8yp2o)
 
-### Anvil
 
-```shell
-$ anvil
-```
-
-### Deploy
-
-```shell
-$ forge script script/Counter.s.sol:CounterScript --rpc-url <your_rpc_url> --private-key <your_private_key>
-```
-
-### Cast
-
-```shell
-$ cast <subcommand>
-```
-
-### Help
-
-```shell
-$ forge --help
-$ anvil --help
-$ cast --help
-```
