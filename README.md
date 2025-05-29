@@ -4,12 +4,12 @@
 - Built on Scroll Sepolia testnet.
 #### Directory Structure
 ```bash
-  ├── src/                 # Smart contracts
-  │   ├── Credits.sol      # ERC-20 token implementation (CRED)
-  │   └── Donation.sol     # Donation and voting contract
-  ├── scripts/             # Deployment scripts
-  ├── test/                # Foundry test cases
-  ├── donation-ui/         # Frontend 
+  |-- src/                 # Smart contracts
+  |   |__Credits.sol      # ERC-20 token implementation (CRED)
+  |   |__Donation.sol     # Donation and voting contract
+  |-- scripts/             # Deployment scripts
+  |-- test/                # Foundry test cases
+  |-- donation-ui/         # Frontend 
   |   | |__app/
   |   | |  |__donate/      # donate page
   |   | |  |__profile/     # profile page
@@ -17,7 +17,7 @@
   |   |__lib/
   |       |_contracts      # Contracts ABIs and Addresses
   |   |__ etc
-  └── .env         # Environment variable configuration
+  |__ .env         # Environment variable configuration
 ```
 
 
@@ -25,7 +25,7 @@
 - Inheritance (Ownable)
 - Ownable (Access Control)
 - Inter-Contract Execution (donation.sol use credit.sol to mint "CRED" tokens)
-- Take control of Credits minting by transfer the ownership (manually) to Donation.sol contract.
+- Take control of Credits minting by transferring the ownership (manually) to the Donation.sol contract.
 
 # Security measures
 - Using Specific Compiler Pragma
@@ -35,7 +35,7 @@
 # Important links & Addresses
 - Testnet Contracts (Scroll Sepolia):
 - 1. Credits: 0x7a59fc37597f911bae74270ae21d1de0a3942e00 
-- 2. Donation: 0x2c787f2e028e07731593137d422acdc038b7ccc2
+- 1. Donation: 0x2c787f2e028e07731593137d422acdc038b7ccc2
 - Frontend Hosting:
 
 # How to run tests
