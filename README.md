@@ -1,5 +1,5 @@
 
-# About this project
+# About this project:
 - This's a decentralized voting platform where users donate ETH to support cases and receive CRED tokens in return.
 - Built on Scroll Sepolia testnet.
 #### Directory Structure
