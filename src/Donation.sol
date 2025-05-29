@@ -37,12 +37,7 @@ contract Donation is Ownable {
 
         _hasVotedForCase[msg.sender][theCase] = true;
 
-        donations.push(DonationRecord(
-            msg.sender,
-            theCase,
-            message,
-            msg.value
-        ));
+        donations.push(DonationRecord(msg.sender, theCase, message, msg.value));
 
         // Mint credits: 1 ETH = 100 CRED
         credit.mint(msg.sender, msg.value * CREDITS_PER_ETH);
@@ -76,7 +71,7 @@ contract Donation is Ownable {
     }
 
     // Return contract balance
-    function getBalance() public view returns (uint) {
+    function getBalance() public view returns (uint256) {
         return address(this).balance;
     }
 }

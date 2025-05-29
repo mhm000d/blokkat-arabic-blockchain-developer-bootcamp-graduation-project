@@ -5,9 +5,8 @@ import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
 
 contract Credits is ERC20, Ownable {
-
     // To limit endless minting
-    uint256 public constant MAX_SUPPLY = 100_000_000 * 10**18; // 100 million CRED
+    uint256 public constant MAX_SUPPLY = 100_000_000 * 10 ** 18; // 100 million CRED
 
     constructor() ERC20("Credits", "CRED") Ownable(msg.sender) {}
 
@@ -15,5 +14,4 @@ contract Credits is ERC20, Ownable {
         require(totalSupply() + amount <= MAX_SUPPLY, "Max supply exceeded");
         _mint(to, amount);
     }
-
 }

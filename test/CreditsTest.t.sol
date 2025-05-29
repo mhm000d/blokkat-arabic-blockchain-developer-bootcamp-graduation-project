@@ -24,12 +24,12 @@ contract CreditsTest is Test {
         assertEq(credit.name(), "Credits");
         assertEq(credit.symbol(), "CRED");
         assertEq(credit.totalSupply(), 0);
-        assertEq(credit.MAX_SUPPLY(), 100_000_000 * 10**18);
+        assertEq(credit.MAX_SUPPLY(), 100_000_000 * 10 ** 18);
         assertEq(credit.owner(), address(donation));
     }
 
     function test_Mint() public {
-        uint256 amount = 1000 * 10**18;
+        uint256 amount = 1000 * 10 ** 18;
 
         vm.prank(address(donation));
         credit.mint(user1, amount);
@@ -41,7 +41,7 @@ contract CreditsTest is Test {
     function test_Mint_RevertIf_NotOwner() public {
         vm.expectRevert(abi.encodeWithSignature("OwnableUnauthorizedAccount(address)", user1));
         vm.prank(user1);
-        credit.mint(user1, 1000 * 10**18);
+        credit.mint(user1, 1000 * 10 ** 18);
     }
 
     function test_Mint_RevertIf_ExceedsMaxSupply() public {

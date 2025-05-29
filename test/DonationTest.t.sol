@@ -110,5 +110,4 @@ contract DonationTest is Test {
         vm.expectRevert(abi.encodeWithSelector(Ownable.OwnableUnauthorizedAccount.selector, user1));
         donation.withdraw();
     }
-    
 }
